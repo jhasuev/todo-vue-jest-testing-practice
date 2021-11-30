@@ -44,7 +44,7 @@
       }
     },
     mounted() {
-      this.$refs.item.children.forEach(child => {
+      Array.from(this.$refs.item.children).forEach(child => {
         this.maxHeight = Math.max(this.maxHeight, parseFloat(getComputedStyle(child).height))
       })
 
