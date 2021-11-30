@@ -1,3 +1,5 @@
+const PRETTIER_SETTIGS = require("./.prettierrc.js")
+
 module.exports = {
   root: true,
   env: {
@@ -8,10 +10,15 @@ module.exports = {
     parser: "babel-eslint",
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "prettier/prettier": ["error", { endOfLine: "auto" }],
-    "semicolons": false,
+    'prettier/prettier': [
+      'warn',
+      {
+        ...PRETTIER_SETTIGS,
+      },
+    ],
+    camelcase: 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
   overrides: [
     {
@@ -24,4 +31,4 @@ module.exports = {
       },
     },
   ],
-};
+}

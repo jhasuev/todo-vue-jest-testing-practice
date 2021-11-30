@@ -10,7 +10,7 @@ export default {
   props: {
     route: { type: Object, default: () => ({}) },
   },
-};
+}
 </script>
 
 <style lang="scss">
